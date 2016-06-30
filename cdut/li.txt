@@ -1,0 +1,139 @@
+<ul class="header">
+    <li id="header1" class="h1">
+        <a href=""><span>学校概况</span></a>
+        <ul>
+            <li id="li11"><a href="">理工简介</a></li>
+            <li id="li12"><a href="">校名</a></li>
+            <li id="li13"><a href="">校训</a></li>
+            <li id="li14"><a href="">校标</a></li>
+            <li id="li15"><a href="">历史沿革</a></li>
+            <li id="li16"><a href="">现任领导</a></li>
+            <li id="li17"><a href="">领导题词</a></li>
+            <li id="li18"><a href="">校友风光</a></li>
+            <li id="li19"><a href="">校园风光</a></li>
+        </ul>
+    </li>
+    <li id="header2" class="h1">
+        <a href=""><span>组织机构</span></a>
+        <ul>
+            <li id="li21"><a href="">校园风光</a></li>
+            <li id="li22"><a href="">校园风光</a></li>
+            <li id="li23"><a href="">教学单位</a></li>
+            <li id="li24"><a href="">教辅单位</a></li>
+            <li id="li25"><a href="">科研单位</a></li>
+            <li id="li26"><a href="">其他单位</a></li>
+        </ul>
+    </li>
+    <li id="header3" class="h1">
+        <a href=""><span>师资队伍</span></a>
+        <ul>
+            <li id="li31"><a href="">师资概况</a></li>
+            <li id="li32"><a href="">人事管理</a></li>
+            <li id="li33"><a href="">人才招聘</a></li>
+        </ul>
+    </li>
+    <li id="header4" class="h1">
+        <a href=""><span>人才培养</span></a>
+        <ul>
+            <li id="li41"><a href="">本科生教育</a></li>
+            <li id="li42"><a href="">本科生教育</a></li>
+            <li id="li43"><a href="">专科生教育</a></li>
+            <li id="li44"><a href="">继续教育</a></li>
+            <li id="li45"><a href="">国际教育</a></li>
+        </ul>
+    </li>
+    <li id="header5" class="h1">
+        <a href=""><span>招生就业</span></a>
+        <ul>
+            <li id="li51"><a href="">本专科生招生</a></li>
+            <li id="li52"><a href="">研究生招生</a></li>
+            <li id="li53"><a href="">成教招生</a></li>
+            <li id="li54"><a href="">自考招生</a></li>
+            <li id="li55"><a href="">留学生招生</a></li>
+            <li id="li56"><a href="">就业信息</a></li>
+        </ul>
+    </li>
+    <li id="header6" class="h1">
+        <a href=""><span>科学研究</span></a>
+        <ul>
+            <li id="li61"><a href="">研究机构</a></li>
+            <li id="li62"><a href="">研究基地</a></li>
+        </ul>
+    </li>
+    <li id="header7" class="h1">
+        <a href=""><span>学科建设</span></a>
+        <ul>
+            <li id="li71"><a href="">重点学科</a></li>
+            <li id="li72"><a href="">学位授权点</a></li>
+            <li id="li73"><a href="">特色专业</a></li>
+            <li id="li74"><a href="">博士后流动站</a></li>
+        </ul>
+    </li>
+    <li id="header8" class="h1">
+        <a href=""><span>数字校园</span></a>
+        <ul>
+            <li id="li81"><a href="">数字图书馆</a></li>
+            <li id="li82"><a href="">数字档案馆</a></li>
+            <li id="li83"><a href="">数字博物馆</a></li>
+            <li id="li84"><a href="">数字财务</a></li>
+            <li id="li85"><a href="">新闻</a></li>
+            <li id="li86"><a href="">图片</a></li>
+            <li id="li87"><a href="">三维校园</a></li>
+        </ul>
+    </li>
+    <li id="header9" class="h1">
+        <a href=""><span>公共服务</span></a>
+        <ul>
+            <li id="li91"><a href="">网络服务</a></li>
+            <li id="li92"><a href="">国资管理</a></li>
+            <li id="li93"><a href="">后勤服务</a></li>
+            <li id="li94"><a href="">理工附小</a></li>
+        </ul>
+    </li>
+    <li id="header10" class="h1">
+        <a href=""><span>校园文化</span></a>
+        <ul>
+            <li id="li101"><a href="">校团委</a></li>
+            <li id="li102"><a href="">成理媒体</a></li>
+            <li id="li103"><a href="">支援服务站</a></li>
+            <li id="li104"><a href="">校友会</a></li>
+        </ul>
+    </li>    
+</ul>
+   
+    <div id="arc1" class="Arc"></div>
+    <div id="arc2" class="Arc"></div>
+    <div id="arc3" class="Arc"></div>
+    <div id="arc4" class="Arc"></div>
+    <div id="arc5" class="Arc"></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.header li:hover{
+    background-color:rgb(150,36,46);
+    box-shadow: 0 0 8px #DDD;
+    -webkit-box-shadow: 0 0 8px #DDD;
+    -moz-box-shadow: 0 0 8px #DDD;
+}
+.header li:hover li{
+    display: block;
+    z-index: 4px;
+}

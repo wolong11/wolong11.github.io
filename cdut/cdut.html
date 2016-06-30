@@ -1,0 +1,299 @@
+·<!DDOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="content-type"content="text/html;charset=utf8">
+<title>成都理工大学</title>
+   <link rel="stylesheet" href="boot/css/bootstrap.min.css">
+    <link href="cdut.css/cdut.css"rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+
+        window.onload = function () {
+            var container = document.getElementById('container');
+            var list = document.getElementById('list');
+            var buttons = document.getElementById('buttons').getElementsByTagName('span');
+            var prev = document.getElementById('prev');
+            var next = document.getElementById('next');
+            var index = 1;
+            var len = 5;
+            var animated = false;
+            var interval = 4985;
+            var timer;
+
+
+            function animate (offset) {
+                if (offset == 0) {
+                    return;
+                }
+                animated = true;
+                var time = 300;
+                var inteval = 10;
+                var speed = offset/(time/inteval);
+                var left = parseInt(list.style.left) + offset;
+
+                var go = function (){
+                    if ( (speed > 0 && parseInt(list.style.left) < left) || (speed < 0 && parseInt(list.style.left) > left)) {
+                        list.style.left = parseInt(list.style.left) + speed + 'px';
+                        setTimeout(go, inteval);
+                    }
+                    else {
+                        list.style.left = left + 'px';
+                        if(left>-200){
+                            list.style.left = -997 * len + 'px';
+                        }
+                        if(left<(-997 * len)) {
+                            list.style.left = '-997px';
+                        }
+                        animated = false;
+                    }
+                }
+                go();
+            }
+
+            function showButton() {
+                for (var i = 0; i < buttons.length ; i++) {
+                    if( buttons[i].className == 'on'){
+                        buttons[i].className = '';
+                        break;
+                    }
+                }
+                buttons[index - 1].className = 'on';
+            }
+
+            function play() {
+                timer = setTimeout(function () {
+                    next.onclick();
+                    play();
+                }, interval);
+            }
+            function stop() {
+                clearTimeout(timer);
+            }
+
+            next.onclick = function () {
+                if (animated) {
+                    return;
+                }
+                if (index == 5) {
+                    index = 1;
+                }
+                else {
+                    index += 1;
+                }
+                animate(-997);
+                showButton();
+            }
+            prev.onclick = function () {
+                if (animated) {
+                    return;
+                }
+                if (index == 1) {
+                    index = 5;
+                }
+                else {
+                    index -= 1;
+                }
+                animate(997);
+                showButton();
+            }
+
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].onclick = function () {
+                    if (animated) {
+                        return;
+                    }
+                    if(this.className == 'on') {
+                        return;
+                    }
+                    var myIndex = parseInt(this.getAttribute('index'));
+                    var offset = -997 * (myIndex - index);
+
+                    animate(offset);
+                    index = myIndex;
+                    showButton();
+                }
+            }
+
+            container.onmouseover = stop;
+            container.onmouseout = play;
+
+            play();
+
+        }
+    </script>
+    </head>
+    <body>
+        <div class="top">
+            <div class="top1"></div>
+            <div class="top2"><a href="#">书记信箱</a><a href="#">校长信箱</a><a href="#">图片网</a><a href="#">校园网</a><a href="#">网站地图</a><a href="#">ENGLISH</a></div>
+        </div>
+        <div class="head">
+        <div><img src="cdut.css/img/cdut1.png"></div>
+            <div class="abc">
+            <ul class="header">
+    <li id="header1" class="h1">
+        <a href=""><span>学校概况</span></a>
+        <ul>
+            <li class="li11"><a href="">理工简介</a></li>
+            <li class="li11"><a href="">校名</a></li>
+            <li class="li11"><a href="">校训</a></li>
+            <li class="li11"><a href="">校标</a></li>
+            <li class="li11"><a href="">历史沿革</a></li>
+            <li class="li11"><a href="">现任领导</a></li>
+            <li class="li11"><a href="">领导题词</a></li>
+            <li class="li11"><a href="">校友风光</a></li>
+            <li class="li11"><a href="">校园风光</a></li>
+        </ul>
+    </li>
+    <li id="header2" class="h1">
+        <a href=""><span>组织机构</span></a>
+        <ul>
+            <li id="li21"><a href="">校园风光</a></li>
+            <li id="li22"><a href="">校园风光</a></li>
+            <li id="li23"><a href="">教学单位</a></li>
+            <li id="li24"><a href="">教辅单位</a></li>
+            <li id="li25"><a href="">科研单位</a></li>
+            <li id="li26"><a href="">其他单位</a></li>
+        </ul>
+    </li>
+    <li id="header3" class="h1">
+        <a href=""><span>师资队伍</span></a>
+        <ul>
+            <li id="li31"><a href="">师资概况</a></li>
+            <li id="li32"><a href="">人事管理</a></li>
+            <li id="li33"><a href="">人才招聘</a></li>
+        </ul>
+    </li>
+    <li id="header4" class="h1">
+        <a href=""><span>人才培养</span></a>
+        <ul>
+            <li id="li41"><a href="">本科生教育</a></li>
+            <li id="li42"><a href="">本科生教育</a></li>
+            <li id="li43"><a href="">专科生教育</a></li>
+            <li id="li44"><a href="">继续教育</a></li>
+            <li id="li45"><a href="">国际教育</a></li>
+        </ul>
+    </li>
+    <li id="header5" class="h1">
+        <a href=""><span>招生就业</span></a>
+        <ul>
+            <li id="li51"><a href="">本专科生招生</a></li>
+            <li id="li52"><a href="">研究生招生</a></li>
+            <li id="li53"><a href="">成教招生</a></li>
+            <li id="li54"><a href="">自考招生</a></li>
+            <li id="li55"><a href="">留学生招生</a></li>
+            <li id="li56"><a href="">就业信息</a></li>
+        </ul>
+    </li>
+    <li id="header6" class="h1">
+        <a href=""><span>科学研究</span></a>
+        <ul>
+            <li id="li61"><a href="">研究机构</a></li>
+            <li id="li62"><a href="">研究基地</a></li>
+        </ul>
+    </li>
+    <li id="header7" class="h1">
+        <a href=""><span>学科建设</span></a>
+        <ul>
+            <li id="li71"><a href="">重点学科</a></li>
+            <li id="li72"><a href="">学位授权点</a></li>
+            <li id="li73"><a href="">特色专业</a></li>
+            <li id="li74"><a href="">博士后流动站</a></li>
+        </ul>
+    </li>
+    <li id="header8" class="h1">
+        <a href=""><span>数字校园</span></a>
+        <ul>
+            <li id="li81"><a href="">数字图书馆</a></li>
+            <li id="li82"><a href="">数字档案馆</a></li>
+            <li id="li83"><a href="">数字博物馆</a></li>
+            <li id="li84"><a href="">数字财务</a></li>
+            <li id="li85"><a href="">新闻</a></li>
+            <li id="li86"><a href="">图片</a></li>
+            <li id="li87"><a href="">三维校园</a></li>
+        </ul>
+    </li>
+    <li id="header9" class="h1">
+        <a href=""><span>公共服务</span></a>
+        <ul>
+            <li id="li91"><a href="">网络服务</a></li>
+            <li id="li92"><a href="">国资管理</a></li>
+            <li id="li93"><a href="">后勤服务</a></li>
+            <li id="li94"><a href="">理工附小</a></li>
+        </ul>
+    </li>
+    <li id="header10" class="h1">
+        <a href=""><span>校园文化</span></a>
+        <ul>
+            <li id="li101"><a href="">校团委</a></li>
+            <li id="li102"><a href="">成理媒体</a></li>
+            <li id="li103"><a href="">支援服务站</a></li>
+            <li id="li104"><a href="">校友会</a></li>
+        </ul>
+    </li>    
+</ul>
+   
+
+<div id="container">
+    <div id="list" style="left: -997px;">
+        <img src="img/5.jpg" alt="1"/>
+        <img src="img/1.jpg" alt="1"/>
+        <img src="img/2.jpg" alt="2"/>
+        <img src="img/3.jpg" alt="3"/>
+        <img src="img/4.jpg" alt="4"/>
+        <img src="img/5.jpg" alt="5"/>
+        <img src="img/1.jpg" alt="5"/>
+    </div>
+    <div id="buttons">
+        <span index="1" class="on"></span>
+        <span index="2"></span>
+        <span index="3"></span>
+        <span index="4"></span>
+        <span index="5"></span>
+    </div>
+    <p href="javascript:;" id="prev" class="arrow">&lt;</p>
+    <p href="javascript:;" id="next" class="arrow">&gt;</p>
+</div>
+  <div class="headers1">
+                <ul class="xinwen1">
+    <li><a href="#"><span>要闻 NEWS</span></a>
+        
+    </li>
+    <li><a href="#"><span>媒体 NEWS</span></a>
+        
+    </li>
+                </ul>
+            </div>
+            <div class="headers2"></div>
+            <div class="headers3"><h5>专栏 COLUMN</h5>
+            <div class="denglu"><form method="" action="">
+               <label for="username">用户名：</label>
+            <input type="text" name="username" id="username" value="">
+               </br><label for="username">登录密码：</label>
+        <input type="password" name="possword" id="possword" value="">
+                </br><input type="submit" name="提交" id="submit" >
+        <input type="reset" name="重置" id="reset" >
+        </form>
+            </div></div>
+            </div>
+        </div>
+        <div class="main">
+        <div class="bcd">
+        <a href="#"><img src="cdut.css/img/cdut4.jpg"></a></br>
+        <a href="#"><img src="cdut.css/img/cdut5.jpg"></a>
+        </div>
+        </div>
+        
+        <div class="foot"><div class="img"><img src="cdut.css/img/cdut2.png">
+            </div>
+        <div class="def">
+            <p>学校地址： 成都市二仙桥东三路一号 邮政编码：610059</p><p>成都理工大学 <a href="#">蜀ICP备05026980号</a></p>
+            <p>本、专科招生咨询电话：028-84078927 中英合作办学招生咨询电话028-84075593</p>
+            <p>成教招生咨询电话：028-84077092 自考招生咨询电话：028-84079791</p>
+            <p>管理单位：党委宣传部网络信息管理办公室</p>
+        </div>
+            
+        </div>
+        <script src="boot/js/jquery-2.1.4.min.js"></script>
+    <script src="boot/js/bootstrap.min.js"></script>
+    </body>
+</html>
